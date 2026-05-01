@@ -1,0 +1,17 @@
+{
+  "name": "poseidon-music-tech",
+  "version": "2.0.0",
+  "description": "Poseidon Music Tech - Bot de WhatsApp focado em música e tecnologia",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Poseidon Music Tech",
+  "license": "ISC",
+  "dependencies": {
+    "@adiwajshing/keyed-db": "^0.2.4",
+    "@whiskeysockets/baileys": "7.0.0-rc.9",
+    "chokidar": "^5.0.0",
+    "pino": "^7.11.0"
+  }
+}

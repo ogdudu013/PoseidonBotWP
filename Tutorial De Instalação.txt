@@ -1,0 +1,62 @@
+══════════════════════════════════════════════
+       🛠️ GUIA COMPLETO - POSEIDON MUSIC TECH
+       Configuração no Termux - 2026
+══════════════════════════════════════════════
+
+1️⃣ DOWNLOADS NECESSÁRIOS
+
+• Termux (Versão Oficial):
+  https://f-droid.org/en/packages/com.termux/
+
+• MT Manager (Editor de arquivos):
+  https://mt-manager.en.uptodown.com/android
+
+
+2️⃣ PASSO A PASSO PARA CONFIGURAR O TERMUX
+
+Passo 1: Abra o Termux e execute o comando abaixo:
+termux-setup-storage
+→ Permita o acesso ao armazenamento quando solicitado.
+
+Passo 2: Atualize os pacotes do Termux:
+pkg update -y && pkg upgrade -y
+
+Passo 3: Instale os programas necessários:
+pkg install git yarn nodejs -y
+
+Passo 4: Crie a pasta do bot e entre nela:
+mkdir -p /sdcard/PoseidonBotWP && cd /sdcard/PoseidonBotWP
+
+Passo 5: Instale as dependências do bot:
+yarn
+
+Passo 6: Inicie o bot:
+node index.js
+
+
+3️⃣ COMANDO ÚNICO (Copie e cole tudo de uma vez)
+
+Após dar permissão com "termux-setup-storage", use este comando:
+
+pkg update -y && pkg upgrade -y && pkg install git yarn nodejs -y && cd /sdcard/PoseidonBotWP && yarn && node index.js
+
+
+4️⃣ COMANDOS ÚTEIS
+
+• Entrar na pasta do bot:
+  cd /sdcard/PoseidonBotWP
+
+• Rodar o bot novamente:
+  node index.js
+
+• Ver arquivos da pasta:
+  ls
+
+• Limpar a tela:
+  clear
+
+• Voltar para a pasta home:
+  cd \~
+══════════════════════════════════════════════
+                BOT: Poseidon Music Tech
+══════════════════════════════════════════════

@@ -1,0 +1,82 @@
+COMPLETO
+Passo 1: Abra o Termux e dê permissão de armazenamento:
+termux-setup-storage
+Passo 2: Atualize os pacotes do Termux:
+pkg update -y && pkg upgrade -y
+Passo 3: Instale os pacotes necessários:
+pkg install nodejs-lts git yarn ffmpeg -y
+Passo 4: Crie a pasta do bot e entre nela:
+mkdir -p $HOME/poseidon-bot && cd $HOME/poseidon-bot
+Passo 5: Coloque seu arquivo index.js dentro dessa pasta (use MT Manager para colar o código).
+Passo 6: Instale as dependências:
+yarn install
+Passo 7: Inicie o bot pela primeira vez:
+node index.js
+3. COMANDO ÚNICO (Copie e cole tudo)
+termux-setup-storage && pkg update -y && pkg upgrade -y && pkg install nodejs-lts git yarn ffmpeg -y && mkdir -p $HOME/poseidon-bot && cd $HOME/poseidon-bot && yarn install && node index.js
+4. COMANDOS ÚTEIS (Salve estes)
+# Entrar na pasta do bot
+cd $HOME/poseidon-bot
+
+# Ver arquivos da pasta
+ls
+
+# Limpar tela
+clear
+
+# Voltar para pasta home
+cd $HOME
+
+# Rodar o bot normalmente
+node index.js
+5. USANDO PM2 (RECOMENDADO - Mantém o bot 24h)
+# Instalar PM2
+npm install -g pm2
+
+# Iniciar o bot com PM2
+pm2 start index.js --name "poseidon-bot"
+
+# Ver logs em tempo real
+pm2 logs poseidon-bot
+
+# Reiniciar o bot
+pm2 restart poseidon-bot
+
+# Parar o bot
+pm2 stop poseidon-bot
+
+# Lista de processos
+pm2 list
+
+# Salvar processos do PM2
+pm2 save
+6. AUTO START AO LIGAR O CELULAR (Termux Boot)
+Instale o pacote:
+pkg install termux-boot -y
+Crie a pasta de boot:
+mkdir -p \~/.termux/boot/
+Crie o arquivo de inicialização:
+nano \~/.termux/boot/start-bot
+Cole o seguinte conteúdo:
+#!/data/data/com.termux/files/usr/bin/sh
+termux-wake-lock
+pm2 resurrect
+Salve (Ctrl+O → Enter → Ctrl+X)
+Dê permissão:
+chmod +x \~/.termux/boot/start-bot
+Teste o resurrect:
+pm2 save
+pm2 resurrect
+7. COMO ATUALIZAR O BOT
+cd $HOME/poseidon-bot
+pm2 stop poseidon-bot
+# Atualize seu index.js com MT Manager
+yarn install
+pm2 restart poseidon-bot
+8. DICAS IMPORTANTES 2026
+Use sempre nodejs-lts (mais estável).
+Mantenha o bot na pasta $HOME/poseidon-bot (memória interna).
+Evite pastas em /sdcard/ para evitar problemas de permissão.
+PM2 + termux-boot é a melhor combinação para rodar 24 horas.
+Instale ffmpeg para suporte a áudio, vídeo e stickers.
+Use delays humanizados no código para evitar banimento.
